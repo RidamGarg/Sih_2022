@@ -19,6 +19,7 @@ module.exports.Register = async(req,res,next)=>{
         req.flash('error',e.message);
         res.redirect('/register')
     }
+
 }
 module.exports.renderLogin = (req,res)=>{
     res.render('users/signin');

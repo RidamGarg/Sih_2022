@@ -20,13 +20,13 @@ module.exports.Register = async(req,res,next)=>{
         res.redirect('/register')
     }
 }
-module.exports.renderLogin = (req,res)=>{ 
+module.exports.renderLogin = (req,res)=>{
     res.render('users/signin');
 }
 module.exports.Login = async(req,res)=>{
     req.flash('success','Welcome Back');
     const redirect = req.session.returnTo || '/campgrounds';
-    delete req.session.returnTo ; 
+    delete req.session.returnTo ;
     res.redirect(redirect);
 }
 module.exports.Logout = (req,res)=>{

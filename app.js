@@ -15,6 +15,7 @@ const ExpressError = require('./utils/ExpressError');
 const campgroundRouter = require('./routes/campgrounds');
 const reviewRouter = require('./routes/reviews');
 const userRouter = require('./routes/user');
+const eventRouter = require('./routes/event');
 const User = require('./models/user');
 const LocalStrategy = require('passport-local');
 const passport = require('passport');
@@ -104,7 +105,7 @@ app.use(
                 "'self'",
                 "blob:",
                 "data:",
-                "https://res.cloudinary.com/dionb6owj/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
+                "https://res.cloudinary.com/dionb6owj/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT!
                 "https://images.unsplash.com",
             ],
             fontSrc: ["'self'", ...fontSrcUrls],
@@ -127,6 +128,7 @@ app.use((req,res,next)=>{
 app.get('/',(req,res)=>res.render('home'))
 app.use('/campgrounds',campgroundRouter);
 app.use('/campgrounds/:id/reviews',reviewRouter);
+app.use("/",eventRouter);
 app.use('/',userRouter);
 
 app.all('*',(req,res,next)=>{

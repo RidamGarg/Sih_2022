@@ -130,7 +130,9 @@ app.use('/campgrounds',campgroundRouter);
 app.use('/campgrounds/:id/reviews',reviewRouter);
 app.use("/",eventRouter);
 app.use('/',userRouter);
-
+app.get('/about',(req,res)=>{
+    res.render('about');
+});
 app.all('*',(req,res,next)=>{
  next(new ExpressError('Page Not Found',400))
 })

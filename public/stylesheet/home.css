@@ -1,7 +1,7 @@
 body{
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('https://images.unsplash.com/photo-1559521783-1d1599583485?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+    url('/rescue4.webp');
     background-size: cover;
     background-position: 'center';
     background-repeat: no-repeat;
@@ -24,4 +24,57 @@ body{
     background-color: white;
     color: #000 !important;
     text-shadow: none;
+}
+
+.contactrow {
+  margin-top:100px;
+  margin-right:20px;
+}
+.contactintro{
+  text-align:center;
+  padding-top:100px;
+  color:lightslategrey;
+  
+  font-family:'Allison',cursive;
+  font-size:5.3vh;
+
+
+}
+
+
+.fab{
+
+  display: inline-block;
+    margin-left: 20px;
+    margin-right: 1px;
+    margin-bottom:20px;
+    text-align: center;
+
+}
+
+
+.far{
+
+  display: inline-block;
+    margin-left: 20px;
+    margin-right: 1px;
+    margin-bottom:20px;
+    text-align: center;
+
+}
+.fa-instagram{
+  color: transparent;
+background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+background-clip: text;
+-webkit-background-clip: text;
+
+}
+
+  .fa-google {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }

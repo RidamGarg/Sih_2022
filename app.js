@@ -96,6 +96,7 @@ app.use(
             defaultSrc: [],
             connectSrc: ["'self'", ...connectSrcUrls],
             scriptSrc: ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
+            
             styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
             workerSrc: ["'self'", "blob:"],
             childSrc: ["blob:"],
@@ -104,7 +105,7 @@ app.use(
                 "'self'",
                 "blob:",
                 "data:",
-                "https://res.cloudinary.com/dionb6owj/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
+                "https://res.cloudinary.com/dionb6owj/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT!
                 "https://images.unsplash.com",
             ],
             fontSrc: ["'self'", ...fontSrcUrls],
@@ -128,7 +129,9 @@ app.get('/',(req,res)=>res.render('home'))
 app.use('/campgrounds',campgroundRouter);
 app.use('/campgrounds/:id/reviews',reviewRouter);
 app.use('/',userRouter);
-
+app.get('/contact',function(req,res){
+  res.render('contact');
+})
 app.all('*',(req,res,next)=>{
  next(new ExpressError('Page Not Found',400))
 })
@@ -139,8 +142,11 @@ app.use((err,req,res,next)=>{
     }
     res.status(statusCode).render('error',{err});
 })
+
+
+
+
 const port = process.env.PORT||3000 ;
 app.listen(port,()=>{
     console.log('Listening');
 })
-
